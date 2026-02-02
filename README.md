@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="logo.png" alt="ALPack" width="276"/>
+  <img src="logo.png" alt="Logo" width="280"/>
 </p>
 
-<h1 align="center">SlackBuilds para Slackware (Stable e Current)</h1>
+<h1 align="center"><strong>SlackBuilds para Slackware (Stable e Current)</strong></h1>
 
 <h3 align="center">Este repositório contém scripts *SlackBuild* personalizados
 e atualizados para compilar e empacotar softwares de terceiros no Slackware Linux,
