@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="ALPack" width="320"/>
+  <img src="logo.png" alt="ALPack" width="276"/>
 </p>
 
 <h1 align="center">SlackBuilds para Slackware (Stable e Current)</h1>
