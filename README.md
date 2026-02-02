@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="Logo" width="280"/>
+  <img src="logo.png" alt="Logo" width="250"/>
 </p>
 
 <h1 align="center"><strong>SlackBuilds para Slackware (Stable e Current)</strong></h1>
