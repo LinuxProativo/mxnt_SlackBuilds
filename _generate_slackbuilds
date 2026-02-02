@@ -1,0 +1,27 @@
+#!/bin/bash
+
+rm -rf SLACKBUILDS.LIST SLACKBUILDS.TXT
+
+> SLACKBUILDS.LIST
+> SLACKBUILDS.TXT
+
+for pkg in */
+{
+    pkg="${pkg%/}"
+    sl="$pkg/*SlackBuild"
+
+    eval echo "$sl" >> SLACKBUILDS.LIST
+
+    : "$(eval grep -E "^VERSION" "$sl")"; : "${_#*:-}"; VERSION="${_::-1}"
+
+    echo \
+"SLACKBUILD NAME: $( : "$(eval grep -E "^PRGNAM" "$sl")"; echo "${_#*=}" )
+SLACKBUILD LOCATION: ./$pkg
+SLACKBUILD FILES: $( cd "$pkg"; echo * )
+SLACKBUILD VERSION: $VERSION
+SLACKBUILD REQUIRES: $( test -f "$pkg/slack-required" && echo $(< "$pkg/slack-required") )
+SLACKBUILD DOWNLOAD: $( : $(eval grep -Eo "http.*" "$sl"); eval echo "${_}" )
+SLACKBUILD MD5SUM: $( s=( $(eval md5sum "$sl") ); echo "${s[0]}" )
+SLACKBUILD SHORT DESCRIPTION: $( : "$(eval grep -A1 "handy-ruler" "$pkg/slack-desc")"; echo "${_#*:}" )
+" >> SLACKBUILDS.TXT
+}

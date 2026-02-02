@@ -1,0 +1,36 @@
+SLACKBUILD NAME: glm
+SLACKBUILD LOCATION: ./glm
+SLACKBUILD FILES: glm.info glm.SlackBuild README slack-desc
+SLACKBUILD VERSION: 1.0.1
+SLACKBUILD REQUIRES: 
+SLACKBUILD DOWNLOAD: https://github.com/g-truc/glm/archive/refs/tags/1.0.1.tar.gz
+SLACKBUILD MD5SUM: ae5403d516367f97cdbb7028b07af8e7
+SLACKBUILD SHORT DESCRIPTION:  glm (OpenGL Mathematics)
+
+SLACKBUILD NAME: glslang
+SLACKBUILD LOCATION: ./glslang
+SLACKBUILD FILES: glslang.info glslang.SlackBuild README slack-desc slack-required
+SLACKBUILD VERSION: 1.4.309.0
+SLACKBUILD REQUIRES: SPIRV-Tools SPIRV-Headers
+SLACKBUILD DOWNLOAD: https://github.com/KhronosGroup/glslang/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz
+SLACKBUILD MD5SUM: f6729c087f9d514a75b83f1fdf2e99b2
+SLACKBUILD SHORT DESCRIPTION:  glslang (GLSL/ESSL front end, HLSL front end SPIR-V generator)
+
+SLACKBUILD NAME: SPIRV-Headers
+SLACKBUILD LOCATION: ./SPIRV-Headers
+SLACKBUILD FILES: README slack-desc SPIRV-Headers.info SPIRV-Headers.SlackBuild
+SLACKBUILD VERSION: 1.4.309.0
+SLACKBUILD REQUIRES: 
+SLACKBUILD DOWNLOAD: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz
+SLACKBUILD MD5SUM: 2efc79c56a3f61472d661565d4747476
+SLACKBUILD SHORT DESCRIPTION:  SPIRV-Headers (SPIRV Header files)
+
+SLACKBUILD NAME: SPIRV-Tools
+SLACKBUILD LOCATION: ./SPIRV-Tools
+SLACKBUILD FILES: README slack-desc slack-required SPIRV-Tools.info SPIRV-Tools.SlackBuild
+SLACKBUILD VERSION: 1.4.309.0
+SLACKBUILD REQUIRES: SPIRV-Headers
+SLACKBUILD DOWNLOAD: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz
+SLACKBUILD MD5SUM: 2805841eeb9af7245e31ba5ae1aaa662
+SLACKBUILD SHORT DESCRIPTION:  SPIRV-Tools (API and commands for processing SPIR-V modules)
+
