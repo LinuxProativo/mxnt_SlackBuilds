@@ -25,14 +25,17 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=SPIRV-Headers
-VERSION=${VERSION:-1.4.309.0}
+VERSION=${VERSION:-1.4.341.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_mxnt}
 PKGTYPE=${PKGTYPE:-txz}
 
-test -d ../../_SLACKWARE_PACKAGES && {
-    cd ../../_SLACKWARE_PACKAGES; OUTPUT=$(pwd); cd -
-    wget -c -O "$OUTPUT/$PRGNAM-$VERSION.tar.gz" https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-$VERSION.tar.gz
+test -d ../_PKGS && {
+    cd ../_PKGS
+    mkdir -p "$PRGNAM"
+    cd "$PRGNAM"
+    OUTPUT=$(pwd)
+    wget -c -P "$OUTPUT" https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-$VERSION.tar.gz
     INSTALL=1
 }
 
@@ -51,7 +54,7 @@ fi
 
 TMP=${TMP:-/tmp/mxnt}
 PKG=$TMP/package-$PRGNAM
-OUTPUT=${OUTPUT:-$CWD}
+OUTPUT=${OUTPUT:-/tmp}
 
 if [ "$ARCH" = "i586" ]; then
   SLKCFLAGS="-O2 -march=i586 -mtune=i686"
@@ -76,7 +79,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM*-$VERSION
-tar xvf $OUTPUT/$PRGNAM-$VERSION.tar.gz
+test ${INSTALL:-0} -eq 1 && tar xvf $OUTPUT/*$VERSION.tar.gz || tar xvf $CWD/*$VERSION.tar.gz
 cd $PRGNAM*-$VERSION
 chown -R root:root .
 find -L . \
@@ -112,4 +115,7 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
 
-test ${INSTALL:-0} -eq 1 && /sbin/upgradepkg --install-new --reinstall $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+test ${INSTALL:-0} -eq 1 && {
+    /sbin/upgradepkg --install-new --reinstall $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+    chown -R 1000:100 "$OUTPUT"
+}

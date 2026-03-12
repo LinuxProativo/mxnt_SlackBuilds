@@ -1,0 +1,11 @@
+vulkan-smoketest is a specialized utility used to verify the proper
+installation and functionality of the Vulkan graphics API. It provides
+a short rendering test to ensure that the drivers, GPU, and system
+libraries are communicating correctly.
+
+Additional Notes:
+* This package requires a GPU with Vulkan support and the appropriate
+  kernel drivers (such as amdgpu, nvidia, or i915) to be loaded before
+  execution.
+* Ensure your user is a member of the 'video' group to allow direct
+  access to the rendering hardware.

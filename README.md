@@ -16,6 +16,8 @@ Fornecer scripts SlackBuild prontos para uso, com foco em:
 * Correções de build para versões mais recentes de software
 * Inclusão de patches e opções para ambientes modernos
 * Scripts organizados, testados e documentados
+* Esse repositório não será amplo, ele servirá para pacotes específicos que não
+  serão mantidos via AppImage, como drivers, comandos não estáticos, etc;
 
 ## 🗂️ Organização
 
@@ -86,8 +88,6 @@ exceto quando indicado de outra forma nos diretórios individuais. 🧾
 
 Contribuições, correções e melhorias são bem-vindas! Seja para atualizar scripts,
 adaptá-los ao current, ou melhorar a documentação — toda ajuda é apreciada. 💪
-
----
 
 Slackware: keep it simple, keep it Slack. 😎
  

@@ -7,6 +7,7 @@ rm -rf SLACKBUILDS.LIST SLACKBUILDS.TXT
 
 for pkg in */
 {
+    test "$pkg" == "_PKGS/" && continue
     pkg="${pkg%/}"
     sl="$pkg/*SlackBuild"
 
